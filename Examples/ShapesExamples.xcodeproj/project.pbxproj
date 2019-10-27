@@ -22,6 +22,8 @@
 		FABCDB872364E16500842ED9 /* Shapes in Frameworks */ = {isa = PBXBuildFile; productRef = FABCDB862364E16500842ED9 /* Shapes */; };
 		FABCDB8A2364E1A400842ED9 /* ShapesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABCDB892364E1A400842ED9 /* ShapesView.swift */; };
 		FABCDB8B2364E1A400842ED9 /* ShapesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABCDB892364E1A400842ED9 /* ShapesView.swift */; };
+		FABCDB8D2364EBA800842ED9 /* BuilderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABCDB8C2364EBA800842ED9 /* BuilderView.swift */; };
+		FABCDB8E2364EBA800842ED9 /* BuilderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABCDB8C2364EBA800842ED9 /* BuilderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,7 @@
 		FABCDB802364E11F00842ED9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FABCDB812364E11F00842ED9 /* ShapesExamples_macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShapesExamples_macOS.entitlements; sourceTree = "<group>"; };
 		FABCDB892364E1A400842ED9 /* ShapesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapesView.swift; sourceTree = "<group>"; };
+		FABCDB8C2364EBA800842ED9 /* BuilderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuilderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				FABCDB892364E1A400842ED9 /* ShapesView.swift */,
+				FABCDB8C2364EBA800842ED9 /* BuilderView.swift */,
 			);
 			path = ShapesExamples;
 			sourceTree = "<group>";
@@ -257,6 +261,7 @@
 			files = (
 				FABCDB592364DF8400842ED9 /* AppDelegate.swift in Sources */,
 				FABCDB5B2364DF8400842ED9 /* SceneDelegate.swift in Sources */,
+				FABCDB8D2364EBA800842ED9 /* BuilderView.swift in Sources */,
 				FABCDB8A2364E1A400842ED9 /* ShapesView.swift in Sources */,
 				FABCDB5D2364DF8400842ED9 /* ContentView.swift in Sources */,
 			);
@@ -268,6 +273,7 @@
 			files = (
 				FABCDB772364E11E00842ED9 /* ContentView.swift in Sources */,
 				FABCDB752364E11E00842ED9 /* AppDelegate.swift in Sources */,
+				FABCDB8E2364EBA800842ED9 /* BuilderView.swift in Sources */,
 				FABCDB8B2364E1A400842ED9 /* ShapesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

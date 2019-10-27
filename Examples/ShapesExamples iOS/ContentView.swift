@@ -14,8 +14,7 @@ struct ContentView: View {
                 }
                 .tag(0)
             
-            Text("Builder")
-                .font(.title)
+            BuilderView()
                 .tabItem {
                     VStack {
                         Image(systemName: "rectangle.3.offgrid.fill")

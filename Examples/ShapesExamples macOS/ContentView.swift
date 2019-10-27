@@ -11,8 +11,7 @@ struct ContentView: View {
                 }
                 .tag(0)
             
-            Text("Builder")
-                .font(.title)
+            BuilderView()
                 .tabItem {
                     Text("Builder")
                 }
