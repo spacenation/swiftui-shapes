@@ -4,11 +4,6 @@ import Shapes
 struct ShapesView: View {
     var body: some View {
         HStack(alignment: .center, spacing: 16) {
-            
-            Rectangle()
-                .stroke(lineWidth: 4)
-                .foregroundColor(.blue)
-            
             RegularPolygon(sides: 4)
                 .strokeBorder(lineWidth: 20)
                 .foregroundColor(.blue)
@@ -33,6 +28,7 @@ struct ShapesView: View {
                 .foregroundColor(.green)
         }
         .frame(height: 100)
+        .padding()
     }
 }
 

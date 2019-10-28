@@ -13,12 +13,13 @@ struct BuilderView: View {
                         .animation(.easeInOut(duration: 1.0))
                         .foregroundColor(.green)
                         .frame(height: 300)
-                        .background(Circle().foregroundColor(.white))
+                        .padding()
                 }
                 
             }
             
             Slider(value: $polygonSides, in: 3...32)
+                .padding()
         }
 
     }
