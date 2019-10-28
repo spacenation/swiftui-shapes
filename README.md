@@ -2,7 +2,7 @@
 Collection of custom shapes for iOS and macOS
 
 ### Features
-- Recular polygons
+- Regular polygons
 
 <center>
 <img src="Resources/shapes.png"/>
