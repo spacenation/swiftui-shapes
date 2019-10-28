@@ -19,13 +19,6 @@ public struct Line: Shape {
     }
 }
 
-public extension Line {
-    var animatableData: [UnitPoint] {
-        get { self.points }
-        set { self.points = newValue }
-    }
-}
-
 extension CGPoint {
     init(unitPoint: UnitPoint, rect: CGRect) {
         self.init(
