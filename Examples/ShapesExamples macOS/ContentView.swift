@@ -5,15 +5,15 @@ struct ContentView: View {
     
     var body: some View {
         TabView(selection: $selection) {
-            ShapesView()
+            RegularPolygonsView()
                 .tabItem {
-                    Text("Shapes")
+                    Text("RegularPolygons")
                 }
                 .tag(0)
             
-            BuilderView()
+            LinesView()
                 .tabItem {
-                    Text("Builder")
+                    Text("Lines")
                 }
                 .tag(1)
         }

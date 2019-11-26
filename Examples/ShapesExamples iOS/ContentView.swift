@@ -5,20 +5,20 @@ struct ContentView: View {
  
     var body: some View {
         TabView(selection: $selection) {
-            ShapesView()
+            RegularPolygonsView()
                 .tabItem {
                     VStack {
-                        Image(systemName: "square.fill.on.circle.fill")
-                        Text("Shapes")
+                        Image(systemName: "square.fill.on.square.fill")
+                        Text("RegularPolygons")
                     }
                 }
                 .tag(0)
             
-            BuilderView()
+            LinesView()
                 .tabItem {
                     VStack {
-                        Image(systemName: "rectangle.3.offgrid.fill")
-                        Text("Builder")
+                        Image(systemName: "arrow.swap")
+                        Text("Lines")
                     }
                 }
                 .tag(1)
