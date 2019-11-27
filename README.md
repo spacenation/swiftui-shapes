@@ -18,7 +18,7 @@ RegularPolygon(sides: 32)
 </center>
 
 ```swift
-QuadCurve(points: [
+QuadCurve(unitPoints: [
     UnitPoint(x: 0.1, y: 0.1),
     UnitPoint(x: 0.5, y: 0.9),
     UnitPoint(x: 0.9, y: 0.1)
