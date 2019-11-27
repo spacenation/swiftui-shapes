@@ -1,16 +1,11 @@
 import SwiftUI
 
 public struct Line: Shape {
-    var unitPoints: [UnitPoint]
+    private let unitPoints: [UnitPoint]
 
     public func path(in rect: CGRect) -> Path {
         Path { path in
-            guard self.unitPoints.count > 0 else { return }
-            path.move(to: .init(unitPoint: self.unitPoints[0], in: rect))
-            
-            (1..<self.unitPoints.count).forEach { index in
-                path.addLine(to: .init(unitPoint: self.unitPoints[index], in: rect))
-            }
+            path.addLines(self.unitPoints.points(in: rect))
         }
     }
     

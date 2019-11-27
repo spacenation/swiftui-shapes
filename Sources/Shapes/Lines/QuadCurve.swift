@@ -5,27 +5,7 @@ public struct QuadCurve: Shape {
 
     public func path(in rect: CGRect) -> Path {
         Path { path in
-            guard self.unitPoints.count > 0 else { return }
-            var lastUnitPoint = self.unitPoints[0]
-            path.move(to: CGPoint(unitPoint: lastUnitPoint, in: rect))
-            
-            (1..<self.unitPoints.count).forEach { index in
-                let nextUnitPoint = self.unitPoints[index]
-                let nextPoint = CGPoint(unitPoint: nextUnitPoint, in: rect)
-                
-                let halfwayUnitPoint = lastUnitPoint.halfway(to: nextUnitPoint)
-                let halfwayPoint = CGPoint(unitPoint: halfwayUnitPoint, in: rect)
-                
-                let firstControlUnitPoint = halfwayUnitPoint.quadCurveControlUnitPoint(with: lastUnitPoint)
-                let firstControlPoint = CGPoint(unitPoint: firstControlUnitPoint, in: rect)
-                path.addQuadCurve(to: halfwayPoint, control: firstControlPoint)
-                
-                let secondControlUnitPoint = halfwayUnitPoint.quadCurveControlUnitPoint(with: nextUnitPoint)
-                let secondControlPoint = CGPoint(unitPoint: secondControlUnitPoint, in: rect)
-                path.addQuadCurve(to: nextPoint, control: secondControlPoint)
-                
-                lastUnitPoint = nextUnitPoint
-            }
+            path.addQuadCurves(self.unitPoints.points(in: rect))
         }
     }
     
