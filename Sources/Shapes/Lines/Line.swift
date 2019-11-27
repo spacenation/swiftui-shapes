@@ -1,27 +1,34 @@
 import SwiftUI
 
 public struct Line: Shape {
-    var points: [UnitPoint]
+    var unitPoints: [UnitPoint]
 
     public func path(in rect: CGRect) -> Path {
         Path { path in
-            guard self.points.count > 0 else { return }
-            path.move(to: .init(unitPoint: self.points[0], in: rect))
+            guard self.unitPoints.count > 0 else { return }
+            path.move(to: .init(unitPoint: self.unitPoints[0], in: rect))
             
-            (1..<self.points.count).forEach { index in
-                path.addLine(to: .init(unitPoint: self.points[index], in: rect))
+            (1..<self.unitPoints.count).forEach { index in
+                path.addLine(to: .init(unitPoint: self.unitPoints[index], in: rect))
             }
         }
     }
     
-    public init(points: [UnitPoint]) {
-        self.points = points
+    public init(unitPoints: [UnitPoint]) {
+        self.unitPoints = unitPoints
+    }
+}
+
+public extension Line {
+    init<Data: RandomAccessCollection>(unitData: Data) where Data.Element : BinaryFloatingPoint {
+        let step: CGFloat = unitData.count > 1 ? 1.0 / CGFloat(unitData.count - 1) : 1.0
+        self.unitPoints = unitData.enumerated().map { (index, dataPoint) in UnitPoint(x: step * CGFloat(index), y: CGFloat(dataPoint)) }
     }
 }
 
 struct Line_Previews: PreviewProvider {
     static var previews: some View {
-        Line(points: [
+        Line(unitPoints: [
             UnitPoint(x: 0.1, y: 0.1),
             UnitPoint(x: 0.5, y: 0.9),
             UnitPoint(x: 0.9, y: 0.1)
