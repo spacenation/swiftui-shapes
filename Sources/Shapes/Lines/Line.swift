@@ -6,25 +6,16 @@ public struct Line: Shape {
     public func path(in rect: CGRect) -> Path {
         Path { path in
             guard self.points.count > 0 else { return }
-            path.move(to: .init(unitPoint: self.points[0], rect: rect))
+            path.move(to: .init(unitPoint: self.points[0], in: rect))
             
             (1..<self.points.count).forEach { index in
-                path.addLine(to: .init(unitPoint: self.points[index], rect: rect))
+                path.addLine(to: .init(unitPoint: self.points[index], in: rect))
             }
         }
     }
     
     public init(points: [UnitPoint]) {
         self.points = points
-    }
-}
-
-extension CGPoint {
-    init(unitPoint: UnitPoint, rect: CGRect) {
-        self.init(
-            x: rect.width * unitPoint.x,
-            y: rect.height - (rect.height * unitPoint.y)
-        )
     }
 }
 

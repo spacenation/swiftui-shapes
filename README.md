@@ -1,12 +1,31 @@
-## Custom SwiftUI Shapes
+## SwiftUI Shapes
 Collection of custom shapes for iOS and macOS
 
-### Features
-- Regular polygons
-
+## Regular Polygons
 <center>
-<img src="Resources/shapes.png"/>
+<img src="Resources/regularRectangles.png"/>
 </center>
+
+```swift
+Pentagon()
+Hexagon()
+RegularPolygon(sides: 32)
+```
+
+## Lines and Curves
+<center>
+<img src="Resources/lines.png"/>
+</center>
+
+```swift
+QuadCurve(points: [
+    UnitPoint(x: 0.1, y: 0.1),
+    UnitPoint(x: 0.5, y: 0.9),
+    UnitPoint(x: 0.9, y: 0.1)
+])
+.stroke(Color.blue, style: .init(lineWidth: 2, lineCap: .round))
+.frame(height: 200)
+```
 
 ## How to use
 
@@ -15,22 +34,6 @@ Add this swift package to your project
 git@github.com:SwiftUIExtensions/Shapes.git
 ```
 
-Import and use
-
-```swift
-import Shapes
-import SwiftUI
-
-struct ContentView: View {    
-    var body: some View {
-        Group {
-            Pentagon()
-            Hexagon()
-            RegularPolygon(sides: 32)
-        }
-    }
-}
-```
 For more examples open `/Examples/ShapesExamples.xcodeproj`
 
 ## SDKs
@@ -42,5 +45,8 @@ For more examples open `/Examples/ShapesExamples.xcodeproj`
 ## Roadmap 
 - Rounded regular polygons
 
-## Contibutions
+## Code Contibutions
 Feel free to contribute via fork/pull request to master branch. If you want to request a feature or report a bug please start a new issue.
+
+## Coffee Contibutions
+If you find this project useful please consider becoming my GitHub sponsor.

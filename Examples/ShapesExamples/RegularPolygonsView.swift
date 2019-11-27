@@ -1,7 +1,7 @@
 import SwiftUI
 import Shapes
 
-struct ShapesView: View {
+struct RegularPolygonsView: View {
     var body: some View {
         HStack(alignment: .center, spacing: 16) {
             RegularPolygon(sides: 4)
@@ -34,6 +34,6 @@ struct ShapesView: View {
 
 struct ShapesView_Previews: PreviewProvider {
     static var previews: some View {
-        ShapesView()
+        RegularPolygonsView()
     }
 }
