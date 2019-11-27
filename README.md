@@ -1,4 +1,4 @@
-## Custom SwiftUI Shapes
+## SwiftUI Shapes
 Collection of custom shapes for iOS and macOS
 
 ## Regular Polygons
