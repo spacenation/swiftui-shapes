@@ -24,6 +24,8 @@
 		FABCDB7C2364E11F00842ED9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FABCDB7B2364E11F00842ED9 /* Preview Assets.xcassets */; };
 		FABCDB7F2364E11F00842ED9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FABCDB7D2364E11F00842ED9 /* Main.storyboard */; };
 		FABCDB872364E16500842ED9 /* Shapes in Frameworks */ = {isa = PBXBuildFile; productRef = FABCDB862364E16500842ED9 /* Shapes */; };
+		FAFBB70F2393106600E70575 /* PatternsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFBB70E2393106600E70575 /* PatternsView.swift */; };
+		FAFBB7102393106600E70575 /* PatternsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFBB70E2393106600E70575 /* PatternsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,7 @@
 		FABCDB7E2364E11F00842ED9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FABCDB802364E11F00842ED9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FABCDB812364E11F00842ED9 /* ShapesExamples_macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShapesExamples_macOS.entitlements; sourceTree = "<group>"; };
+		FAFBB70E2393106600E70575 /* PatternsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +148,7 @@
 			children = (
 				FA86726D238DE61500226819 /* RegularPolygonsView.swift */,
 				FA867270238DE6CD00226819 /* LinesView.swift */,
+				FAFBB70E2393106600E70575 /* PatternsView.swift */,
 			);
 			path = ShapesExamples;
 			sourceTree = "<group>";
@@ -264,6 +268,7 @@
 				FABCDB5B2364DF8400842ED9 /* SceneDelegate.swift in Sources */,
 				FABCDB5D2364DF8400842ED9 /* ContentView.swift in Sources */,
 				FA86726E238DE61500226819 /* RegularPolygonsView.swift in Sources */,
+				FAFBB70F2393106600E70575 /* PatternsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +279,7 @@
 				FA86726F238DE61500226819 /* RegularPolygonsView.swift in Sources */,
 				FA867272238DE6CD00226819 /* LinesView.swift in Sources */,
 				FABCDB772364E11E00842ED9 /* ContentView.swift in Sources */,
+				FAFBB7102393106600E70575 /* PatternsView.swift in Sources */,
 				FABCDB752364E11E00842ED9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

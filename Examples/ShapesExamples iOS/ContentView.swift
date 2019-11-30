@@ -22,6 +22,15 @@ struct ContentView: View {
                     }
                 }
                 .tag(1)
+            
+            PatternsView()
+                .tabItem {
+                    VStack {
+                        Image(systemName: "rectangle.split.3x3")
+                        Text("Patterns")
+                    }
+                }
+                .tag(2)
         }
     }
 }
