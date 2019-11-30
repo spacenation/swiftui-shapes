@@ -16,6 +16,12 @@ struct ContentView: View {
                     Text("Lines")
                 }
                 .tag(1)
+            
+            PatternsView()
+                .tabItem {
+                    Text("Patterns")
+                }
+                .tag(2)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }

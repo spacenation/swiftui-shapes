@@ -27,6 +27,19 @@ QuadCurve(unitPoints: [
 .frame(height: 200)
 ```
 
+## Patterns
+<center>
+<img src="Resources/patterns.png"/>
+</center>
+
+```swift
+GridPattern(horizontalLines: 20, verticalLines: 40)
+    .stroke(Color.white.opacity(0.3), style: .init(lineWidth: 1, lineCap: .round))
+    .frame(height: 200)
+    .background(Color.blue)
+    .padding()
+```
+
 ## How to use
 
 Add this swift package to your project
