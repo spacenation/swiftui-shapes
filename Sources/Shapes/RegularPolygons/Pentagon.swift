@@ -21,3 +21,9 @@ extension Pentagon {
         self.inset = inset
     }
 }
+
+struct Pentagon_Previews: PreviewProvider {
+    static var previews: some View {
+        Pentagon()
+    }
+}

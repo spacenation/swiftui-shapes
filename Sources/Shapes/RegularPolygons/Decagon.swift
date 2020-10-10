@@ -21,3 +21,9 @@ extension Decagon {
         self.inset = inset
     }
 }
+
+struct Decagon_Previews: PreviewProvider {
+    static var previews: some View {
+        Decagon()
+    }
+}

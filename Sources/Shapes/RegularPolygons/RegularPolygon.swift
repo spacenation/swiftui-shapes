@@ -29,3 +29,32 @@ extension RegularPolygon {
         self.inset = inset
     }
 }
+
+struct RegularPolygon_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            RegularPolygon(sides: 4)
+                .strokeBorder(lineWidth: 20)
+                .foregroundColor(.blue)
+            
+            Pentagon()
+                .strokeBorder(lineWidth: 20)
+                .foregroundColor(.yellow)
+            
+            Hexagon()
+                .foregroundColor(.orange)
+            
+            Heptagon()
+                .foregroundColor(.blue)
+            
+            Octagon()
+                .foregroundColor(.pink)
+            
+            Nonagon()
+                .foregroundColor(.red)
+            
+            Decagon()
+                .foregroundColor(.green)
+        }
+    }
+}
