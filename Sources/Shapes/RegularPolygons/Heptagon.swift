@@ -21,3 +21,9 @@ extension Heptagon {
         self.inset = inset
     }
 }
+
+struct Heptagon_Previews: PreviewProvider {
+    static var previews: some View {
+        Heptagon()
+    }
+}

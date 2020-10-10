@@ -21,3 +21,9 @@ extension Nonagon {
         self.inset = inset
     }
 }
+
+struct Nonagon_Previews: PreviewProvider {
+    static var previews: some View {
+        Nonagon()
+    }
+}

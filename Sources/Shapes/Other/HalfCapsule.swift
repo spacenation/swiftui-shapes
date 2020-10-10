@@ -37,5 +37,6 @@ public struct HalfCapsule: View, InsettableShape {
 struct HalfCapsule_Previews: PreviewProvider {
     static var previews: some View {
         HalfCapsule()
+            .previewLayout(.fixed(width: 400, height: 300))
     }
 }

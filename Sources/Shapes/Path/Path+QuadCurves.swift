@@ -1,6 +1,5 @@
 import SwiftUI
 
-
 public extension Path {
     mutating func addQuadCurves(_ points: [CGPoint]) {
         guard points.count > 0 else { return }

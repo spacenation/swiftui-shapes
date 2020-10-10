@@ -21,3 +21,9 @@ extension Hexagon {
         self.inset = inset
     }
 }
+
+struct Hexagon_Previews: PreviewProvider {
+    static var previews: some View {
+        Hexagon()
+    }
+}

@@ -21,7 +21,7 @@ public extension QuadCurve {
     }
 }
 
-struct Curve_Previews: PreviewProvider {
+struct QuadCurve_Previews: PreviewProvider {
     static var previews: some View {
         QuadCurve(unitPoints: [
             UnitPoint(x: 0.1, y: 0.1),

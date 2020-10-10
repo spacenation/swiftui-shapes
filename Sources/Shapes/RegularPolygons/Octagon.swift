@@ -21,3 +21,9 @@ extension Octagon {
         self.inset = inset
     }
 }
+
+struct Octagon_Previews: PreviewProvider {
+    static var previews: some View {
+        Octagon()
+    }
+}
