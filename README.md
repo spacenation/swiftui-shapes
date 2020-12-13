@@ -7,9 +7,8 @@ Collection of custom shapes
 </center>
 
 ```swift
-Pentagon()
-Hexagon()
 RegularPolygon(sides: 32)
+RoundedRegularPolygon(sides: 6, radius: 20)
 ```
 
 ## Lines and Curves
@@ -42,18 +41,10 @@ GridPattern(horizontalLines: 20, verticalLines: 40)
 
 ## How to use
 
-Add this swift package to your project
+Add this swift package to your project with SPM
 ```
-git@github.com:swift-extensions/swiftui-shapes.git
+git@github.com:spacenation/swiftui-shapes.git
 ```
-
-For more examples open `/Examples/ShapesExamples.xcodeproj`
-
-## Roadmap 
-- Rounded regular polygons
 
 ## Code Contributions
 Feel free to contribute via fork/pull request to master branch. If you want to request a feature or report a bug please start a new issue.
-
-## Coffee Contributions
-If you find this project useful please consider becoming my GitHub sponsor.
