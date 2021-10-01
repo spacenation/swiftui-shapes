@@ -40,7 +40,7 @@ GridPattern(horizontalLines: 20, verticalLines: 40)
 ```
 
 ## Install
-Add #Package Name# to your project with Swift Package Manager
+Add `Shapes` to your project with Swift Package Manager
 
 ```swift
 // swift-tools-version:5.3
