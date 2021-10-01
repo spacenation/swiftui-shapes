@@ -39,11 +39,19 @@ GridPattern(horizontalLines: 20, verticalLines: 40)
     .padding()
 ```
 
-## How to use
+## Install
+Add #Package Name# to your project with Swift Package Manager
 
-Add this swift package to your project with SPM
-```
-git@github.com:spacenation/swiftui-shapes.git
+```swift
+// swift-tools-version:5.3
+import PackageDescription
+
+let package = Package(
+    name: "YOUR_PROJECT",
+    dependencies: [
+        .package(url: "https://github.com/spacenation/swiftui-shapes.git", from: "1.1.0"),
+    ]
+)
 ```
 
 ## Code Contributions
