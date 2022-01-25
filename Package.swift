@@ -12,6 +12,7 @@ let package = Package(
         .library(name: "Shapes", targets: ["Shapes"])
     ],
     targets: [
-        .target(name: "Shapes", dependencies: [])
+        .target(name: "Shapes", dependencies: []),
+        .testTarget(name: "ShapesTests", dependencies: ["Shapes"])
     ]
 )
