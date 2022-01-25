@@ -41,7 +41,6 @@ extension Path {
                 
                 let angle = ((Double(index) * (360.0 / Double(sides))) - 90) * Double.pi / 180
                 
-                //from point
                 let point = CGPoint(
                     x: centerPoint.x + CGFloat(cos(angle) * hypotenuse),
                     y: centerPoint.y + CGFloat(sin(angle) * hypotenuse)
@@ -49,13 +48,11 @@ extension Path {
                 
                 let viaAngle = ((Double(index + 1) * (360.0 / Double(sides))) - 90) * Double.pi / 180
                 
-                //via point
                 let viaPoint = CGPoint(
                     x: centerPoint.x + CGFloat(cos(viaAngle) * hypotenuse),
                     y: centerPoint.y + CGFloat(sin(viaAngle) * hypotenuse)
                 )
                 
-                //radius
                 if usableRadius == 0 {
                     let sideLength = sqrt((point.x - viaPoint.x) * (point.x - viaPoint.x) + (point.y - viaPoint.y) * (point.y - viaPoint.y))
                     let inradius = sideLength / (2 * tan(.pi / CGFloat(sides)))
@@ -65,7 +62,6 @@ extension Path {
                 
                 let nextAngle = ((Double(index + 2) * (360.0 / Double(sides))) - 90) * Double.pi / 180
                 
-                //next point
                 let nextPoint = CGPoint(
                     x: centerPoint.x + CGFloat(cos(nextAngle) * hypotenuse),
                     y: centerPoint.y + CGFloat(sin(nextAngle) * hypotenuse)
