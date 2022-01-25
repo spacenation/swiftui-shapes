@@ -2,7 +2,7 @@ import SwiftUI
 
 public struct QuadCurve: Shape {
     let unitPoints: [UnitPoint]
-
+    
     public func path(in rect: CGRect) -> Path {
         Path { path in
             path.addQuadCurves(self.unitPoints.points(in: rect))
