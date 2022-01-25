@@ -69,16 +69,10 @@ extension Path {
                 
                 //radius
                 if usableConvexRadius == 0 {
-//                    let sideLength = sqrt((point.x - viaPoint.x) * (point.x - viaPoint.x) + (point.y - viaPoint.y) * (point.y - viaPoint.y))
-//                    let inradius = sideLength / (2 * tan(.pi / CGFloat(points * 2)))
-
                     usableConvexRadius = min(convexRadius, inradius)
                 }
             
                 if usableConcaveRadius == 0 {
-//                    let sideLength = sqrt((point.x - viaPoint.x) * (point.x - viaPoint.x) + (point.y - viaPoint.y) * (point.y - viaPoint.y))
-//                    let inradius = sideLength / (2 * tan(.pi / CGFloat(points * 2)))
-                    
                     usableConcaveRadius = min(concaveRadius, inradius - convexRadius)
                 }
                 
@@ -113,7 +107,6 @@ struct RoundedStarPolygon_Previews: PreviewProvider {
         
         RoundedStarPolygon(points: 5, smoothness: 0.5, convexRadius: 10, concaveRadius: 10)
             .fill(Color.orange)
-            //.background(StarPolygon(points: 5, smoothness: 0.36))
             .background(Circle())
             .previewLayout(.fixed(width: 400, height: 400))
         
