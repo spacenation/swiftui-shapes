@@ -45,24 +45,43 @@ extension Path {
         var usableConvexRadius: CGFloat = .zero
         var usableConcaveRadius: CGFloat = .zero
         
+        func getPoint(from centerPoint: CGPoint, angle: Double, hypotenuse: Double) -> CGPoint {
+            CGPoint(
+                x: centerPoint.x + CGFloat(cos(angle) * hypotenuse),
+                y: centerPoint.y + CGFloat(sin(angle) * hypotenuse)
+            )
+        }
+        
+        func getViaPoint(from centerPoint: CGPoint, angle: Double, hypotenuse: Double, smoothness: CGFloat) -> CGPoint {
+            CGPoint(
+                x: centerPoint.x + CGFloat(cos(angle) * hypotenuse * smoothness),
+                y: centerPoint.y + CGFloat(sin(angle) * hypotenuse * smoothness)
+            )
+        }
+        
+        func getLastPoint(from centerPoint: CGPoint, angle: Double, hypotenuse: Double, smoothness: CGFloat) -> CGPoint {
+            CGPoint(
+                x: centerPoint.x + CGFloat(cos(angle) * hypotenuse * smoothness),
+                y: centerPoint.y + CGFloat(sin(angle) * hypotenuse * smoothness)
+            )
+        }
+        
         return Path { path in
-            (0..<points).forEach { index in
-                let angle = ((Double(index * 2) * (360.0 / Double(sides))) - 90) * Double.pi / 180
+            for index in 0 ..< points {
+                let angle: Double = ((Double(index * 2) * (360.0 / Double(sides))) - 90) * Double.pi / 180
                 
-                let point = CGPoint(
-                    x: centerPoint.x + CGFloat(cos(angle) * hypotenuse),
-                    y: centerPoint.y + CGFloat(sin(angle) * hypotenuse)
-                )
+                let point: CGPoint = getPoint(from: centerPoint, angle: angle, hypotenuse: hypotenuse)
                 
-                let viaAngle = ((Double(index * 2 + 1) * (360.0 / Double(sides))) - 90) * Double.pi / 180
+                let viaAngle: Double = ((Double(index * 2 + 1) * (360.0 / Double(sides))) - 90) * Double.pi / 180
                 
-                let viaPoint = CGPoint(
-                    x: centerPoint.x + CGFloat(cos(viaAngle) * hypotenuse * smoothness),
-                    y: centerPoint.y + CGFloat(sin(viaAngle) * hypotenuse * smoothness)
-                )
+                let viaPoint: CGPoint = getViaPoint(from: centerPoint, angle: viaAngle, hypotenuse: hypotenuse, smoothness: smoothness)
 
-                let sideLength = sqrt((point.x - viaPoint.x) * (point.x - viaPoint.x) + (point.y - viaPoint.y) * (point.y - viaPoint.y))
-                let inradius = sideLength / (2 * tan(.pi / CGFloat(points * 2)))
+                let px: CGFloat = point.x - viaPoint.x
+                let py: CGFloat = point.y - viaPoint.y
+                
+                let sideLength: CGFloat = sqrt(px * px + py * py)
+                
+                let inradius: CGFloat = sideLength / (2 * tan(.pi / CGFloat(points * 2)))
                 
                 if usableConvexRadius == 0 {
                     usableConvexRadius = min(convexRadius, inradius)
@@ -72,19 +91,16 @@ extension Path {
                     usableConcaveRadius = min(concaveRadius, inradius - convexRadius)
                 }
                 
-                let nextAngle = ((Double(index * 2 + 2) * (360.0 / Double(sides))) - 90) * Double.pi / 180
+                let nextAngle: Double = ((Double(index * 2 + 2) * (360.0 / Double(sides))) - 90) * Double.pi / 180
                 
                 let nextPoint = CGPoint(
                     x: centerPoint.x + CGFloat(cos(nextAngle) * hypotenuse),
                     y: centerPoint.y + CGFloat(sin(nextAngle) * hypotenuse)
                 )
                 
-                let lastAngle = ((Double(index * 2 + 3) * (360.0 / Double(sides))) - 90) * Double.pi / 180
+                let lastAngle: Double = ((Double(index * 2 + 3) * (360.0 / Double(sides))) - 90) * Double.pi / 180
                 
-                let lastPoint = CGPoint(
-                    x: centerPoint.x + CGFloat(cos(lastAngle) * hypotenuse * smoothness),
-                    y: centerPoint.y + CGFloat(sin(lastAngle) * hypotenuse * smoothness)
-                )
+                let lastPoint: CGPoint = getLastPoint(from: centerPoint, angle: lastAngle, hypotenuse: hypotenuse, smoothness: smoothness)
                 
                 path.addCircularCornerRadiusArc(from: point, via: viaPoint, to: nextPoint, radius: -usableConcaveRadius, clockwise: true)
                 
