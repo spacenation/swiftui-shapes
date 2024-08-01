@@ -102,7 +102,7 @@ extension Path {
                 
                 let lastPoint: CGPoint = getLastPoint(from: centerPoint, angle: lastAngle, hypotenuse: hypotenuse, smoothness: smoothness)
                 
-                path.addCircularCornerRadiusArc(from: point, via: viaPoint, to: nextPoint, radius: -usableConcaveRadius, clockwise: true)
+                path.addCircularCornerRadiusArc(from: point, via: viaPoint, to: nextPoint, radius: smoothness > 0.5 ? usableConcaveRadius: -usableConcaveRadius, clockwise: smoothness > 0.5 ? false : true)
                 
                 path.addCircularCornerRadiusArc(from: viaPoint, via: nextPoint, to: lastPoint, radius: usableConvexRadius, clockwise: false)
             }
@@ -116,6 +116,11 @@ struct RoundedStarPolygon_Previews: PreviewProvider {
     static var previews: some View {
         
         RoundedStarPolygon(points: 5, smoothness: 0.5, convexRadius: 10, concaveRadius: 10)
+            .fill(Color.orange)
+            .background(Circle())
+            .previewLayout(.fixed(width: 400, height: 400))
+        
+        RoundedStarPolygon(points: 3, smoothness: 0.87, radius: 40)
             .fill(Color.orange)
             .background(Circle())
             .previewLayout(.fixed(width: 400, height: 400))
