@@ -50,7 +50,7 @@ extension Path {
                     y: centerPoint.y + CGFloat(sin(nextAngle) * hypotenuse)
                 )
                 
-                path.addCircularCornerRadiusArc(from: point, via: viaPoint, to: nextPoint, radius: usableRadius, clockwise: false)
+                path.addCircularCornerRadiusArc(from: point, via: viaPoint, to: nextPoint, radius: usableRadius)
             }
             path.closeSubpath()
         }

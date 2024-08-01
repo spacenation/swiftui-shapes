@@ -29,20 +29,19 @@ public extension CGPoint {
 }
 
 public extension CGPoint {
-    static func intersection(start1: CGPoint, end1: CGPoint, start2: CGPoint, end2: CGPoint) -> CGPoint {
-        let x1 = start1.x
-        let y1 = start1.y
-        let x2 = end1.x
-        let y2 = end1.y
-        let x3 = start2.x
-        let y3 = start2.y
-        let x4 = end2.x
-        let y4 = end2.y
-        
-        let intersectionX: CGFloat = ((x1*y2-y1*x2)*(x3-x4) - (x1-x2)*(x3*y4-y3*x4)) / ((x1-x2)*(y3-y4) - (y1-y2)*(x3-x4))
-        let intersectionY: CGFloat = ((x1*y2-y1*x2)*(y3-y4) - (y1-y2)*(x3*y4-y3*x4)) / ((x1-x2)*(y3-y4) - (y1-y2)*(x3-x4))
-        
-        return CGPoint(x: intersectionX, y: intersectionY)
+    static func intersection(start1: CGPoint, end1: CGPoint, start2: CGPoint, end2: CGPoint) -> CGPoint? {
+        let denominator = (end1.x - start1.x) * (end2.y - start2.y) - (end1.y - start1.y) * (end2.x - start2.x)
+        if denominator == 0 {
+            // Lines are parallel or coincident
+            return nil
+        }
+
+        let ua = ((end2.x - start2.x) * (start1.y - start2.y) - (end2.y - start2.y) * (start1.x - start2.x)) / denominator
+
+        let x = start1.x + ua * (end1.x - start1.x)
+        let y = start1.y + ua * (end1.y - start1.y)
+
+        return CGPoint(x: x, y: y)
     }
 }
 
